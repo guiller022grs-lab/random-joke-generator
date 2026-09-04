@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Joke Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>😂 Random Joke Generator</h1>
+            <p class="subtitle">Get random jokes from multiple sources</p>
+        </header>
+
+        <main>
+            <!-- Joke Display Section -->
+            <section class="joke-section">
+                <div class="joke-card">
+                    <div class="joke-content">
+                        <p id="jokeText" class="joke-text">Click the button to get a joke!</p>
+                    </div>
+                    <div class="joke-type" id="jokeType"></div>
+                </div>
+            </section>
+
+            <!-- Controls Section -->
+            <section class="controls-section">
+                <button id="newJokeBtn" class="btn btn-primary">Get New Joke</button>
+                <button id="shareBtn" class="btn btn-secondary">Share Joke</button>
+                <button id="copyBtn" class="btn btn-secondary">Copy Joke</button>
+            </section>
+
+            <!-- API Selection -->
+            <section class="api-selection">
+                <label for="apiSelect">Choose API:</label>
+                <select id="apiSelect">
+                    <option value="all">All APIs (Random)</option>
+                    <option value="jokeapi">JokeAPI (Programming & General)</option>
+                    <option value="official">Official Joke API</option>
+                    <option value="dad">Dad Jokes API</option>
+                </select>
+            </section>
+
+            <!-- Category Selection (for JokeAPI) -->
+            <section class="category-section" id="categorySection" style="display: none;">
+                <label for="categorySelect">Select Category:</label>
+                <select id="categorySelect">
+                    <option value="Any">Any</option>
+                    <option value="General">General</option>
+                    <option value="Programming">Programming</option>
+                    <option value="Knock-Knock">Knock-Knock</option>
+                </select>
+            </section>
+
+            <!-- Loading State -->
+            <div id="loading" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Loading joke...</p>
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+            <!-- Stats Section -->
+            <section class="stats-section">
+                <div class="stat-item">
+                    <span class="stat-label">Jokes Loaded:</span>
+                    <span id="jokeCount" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Current API:</span>
+                    <span id="currentApi" class="stat-value">-</span>
+                </div>
+            </section>
+
+            <!-- Favorites Section -->
+            <section class="favorites-section">
+                <h2>⭐ Favorite Jokes</h2>
+                <button id="toggleFavoritesBtn" class="btn btn-outline">Show Favorites</button>
+                <div id="favoritesList" class="favorites-list" style="display: none;"></div>
+                <button id="clearFavoritesBtn" class="btn btn-danger" style="display: none;">Clear All</button>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Random Joke Generator | Created with ❤️</p>
+            <p class="api-credits">
+                APIs used:
+                <a href="https://jokeapi.dev/" target="_blank">JokeAPI</a> |
+                <a href="https://official-joke-api.appspot.com/" target="_blank">Official Joke API</a> |
+                <a href="https://icanhazdadjoke.com/api" target="_blank">icanhazdadjoke.com</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
